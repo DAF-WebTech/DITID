@@ -83,7 +83,7 @@ window.addEventListener("load", function() {
         });
         app.news = news;
     });
-    xhr.open("GET", "./?a=1465602");
+    xhr.open("GET", "./?a=1465602?SQ_ASSET_CONTENTS_RAW");
     xhr.send();
 
     var options = document.querySelectorAll("select#monthSelect option");
