@@ -88,10 +88,9 @@ window.addEventListener("load", function() {
 
     var options = document.querySelectorAll("select#monthSelect option");
     options.forEach(function(o) {
-        if (o.dataset.year == "News Items" || o.textContent == "News Items")
-            o.parentNode.removeChild(o);
-
-        o.dataset.month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].indexOf(o.textContent);
+				o.dataset.month = 
+					["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+						.indexOf(o.textContent);
     })
 
     
