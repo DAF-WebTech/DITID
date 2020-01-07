@@ -18,13 +18,13 @@ var app = new Vue({
             var year = this.year;
             var month = this.month;
             
-            var filtered = this.news.filter(function(x) {
-                var retVal = category === "all" || x.category === "all" || category === x.category;
-                retVal = retVal && region === "all" || x.region === "all" || region === x.region;
+            var filtered = this.news.filter(function(n) {
+                var retVal = category === "all" || n.category === "all" || category === n.category;
+                retVal = retVal && (region === "all" || n.region === "all" || region === n.region);
                 if (year != "all") {
-                    retVal = retVal && x.newsPublicationDate.getFullYear() == year;
+                    retVal = retVal && (n.newsPublicationDate.getFullYear() == year);
                     if (month != "-1")
-                        retVal = retVal && x.newsPublicationDate.getMonth() == month;
+                        retVal = retVal && (n.newsPublicationDate.getMonth() == month);
                 }
                 return retVal;
             });

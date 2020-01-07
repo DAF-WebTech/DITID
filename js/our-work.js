@@ -15,8 +15,8 @@ var app = new Vue({
             var region = this.region;
             
             var filtered = this.projects.filter(function(p) {
-                var retVal = category == "all" || p.category == category;
-                retVal = retVal && region == "all" || p.region == "all" || p.region == region;
+                var retVal = (category === "all" || p.category === category);
+                retVal = retVal && (region === "all" || p.region === "all" || p.region === region);
                 return retVal;
             });
             this.length = filtered.length;
