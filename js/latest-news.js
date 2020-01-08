@@ -56,6 +56,7 @@ var app = new Vue({
 					var retVal = div.textContent.substring(0, 50);
 					retVal = retVal.substring(0, retVal.lastIndexOf(" "));
 					retVal += "…";
+					return retVal;
 				}
     }
 });
