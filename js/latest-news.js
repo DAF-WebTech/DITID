@@ -50,10 +50,11 @@ var app = new Vue({
             this.start = (this.activeButton - 1) * this.pageSize;
             event.preventDefault(); 
 				},
-				truncate: function(html) {
+				truncate: function(html, length) {
+					length = (typeof length == 'undefined' ? 75 : length);/*default value is 75*/
 					var div = document.createElement("div");
 					div.innerHTML = html;
-					var retVal = div.textContent.substring(0, 50);
+					var retVal = div.textContent.substring(0, length);
 					retVal = retVal.substring(0, retVal.lastIndexOf(" "));
 					retVal += "…";
 					return retVal;
