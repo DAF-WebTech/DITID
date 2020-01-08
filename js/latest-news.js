@@ -50,11 +50,13 @@ var app = new Vue({
             this.start = (this.activeButton - 1) * this.pageSize;
             event.preventDefault(); 
 				},
-			truncate: function(html) {
-				var div = document.createElement("div");
-				div.innerHTML = html;
-				return div.textContent.substring(0, 72) + "…";
-			}
+				truncate: function(html) {
+					var div = document.createElement("div");
+					div.innerHTML = html;
+					var retVal = div.textContent.substring(0, 50);
+					retVal = retVal.substring(0, retVal.lastIndexOf(" "));
+					retVal += "…";
+				}
     }
 });
 
