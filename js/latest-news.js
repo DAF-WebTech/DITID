@@ -56,7 +56,8 @@ var app = new Vue({
 					div.innerHTML = html;
 					var retVal = div.textContent.substring(0, length);
 					retVal = retVal.substring(0, retVal.lastIndexOf(" "));
-					retVal += "…";
+					if (retVal.length > length)
+						retVal += "…";
 					return retVal;
 				}
     }
