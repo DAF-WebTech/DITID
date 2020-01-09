@@ -1,12 +1,35 @@
 var PAGE_SIZE = 6;
+
+var urlArgs = function() {
+    var args = {};
+    var query = location.search.substring(1);
+    var pairs = query.split("&");
+    pairs.forEach(function(pair) {
+        var pos = pair.indexOf("=");
+        if (pos == -1)
+            return;
+        var name = pair.substring(0, pos);
+        var value = pair.substring(pos + 1);
+        value = decodeURIComponent(value);
+        args[name] = value;
+    });
+    return args;
+}
+
+var args = urlArgs();
+args.region = args.region || "all";
+args.category = args.category || "all";
+document.getElementById("categorySelect").value = args.category;
+document.getElementById("regionSelect").value = args.region;
+
 var app = new Vue({
     el: "#projectList",
     data: {
         projects: JSON.parse(document.getElementById("projectJson").textContent),
         pageSize: PAGE_SIZE,
         activePage: 1,
-        category: "all",
-        region: "all",
+        category: args.category,
+        region: args.region,
         length: 0
     },
     computed: {
@@ -26,21 +49,7 @@ var app = new Vue({
     methods: {
         more: function() {
             this.pageSize += PAGE_SIZE;
-        },
-		truncate: function (html, length) {
-			length = (typeof length == 'undefined' ? 75 : length);/*default value is 75*/
-			var div = document.createElement("div");
-			div.innerHTML = html;
-			// add a space after each element in case we got adjacent elements, we don't want the text to run into each other
-			div.querySelectorAll("*").forEach(function (e) {
-				e.textContent += " ";
-			});
-			var retVal = div.textContent;
-			retVal.replace(/\s{2}/g, " ");// remove double whitespace
-			if (retVal.length > length) // truncate
-				retVal = retVal.substr(0, retVal.lastIndexOf(" ", length)) + "…";
-			return retVal;
-		}
+        }
     }
 });    
 
