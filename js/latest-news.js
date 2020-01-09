@@ -49,20 +49,6 @@ var app = new Vue({
 
 			this.start = (this.activeButton - 1) * this.pageSize;
 			event.preventDefault();
-		},
-		truncate: function (html, length) {
-			length = (typeof length == 'undefined' ? 75 : length);/*default value is 75*/
-			var div = document.createElement("div");
-			div.innerHTML = html;
-			// add a space after each element in case we got adjacent elements, we don't want the text to run into each other
-			div.querySelectorAll("*").forEach(function (e) {
-				e.textContent += " ";
-			});
-			var retVal = div.textContent;
-			retVal.replace(/\s{2}/g, " ");// remove double whitespace
-			if (retVal.length > length) // truncate
-				retVal = retVal.substr(0, retVal.lastIndexOf(" ", length)) + "…";
-			return retVal;
 		}
 	}
 });
@@ -75,7 +61,6 @@ window.addEventListener("load", function () {
 		app.start = 0;
 		app.category = document.getElementById("categorySelect").value;
 		app.region = document.getElementById("regionSelect").value;
-		app.pageSize = parseInt(document.getElementById("sizeSelect").value);
 		var dateRange = document.getElementById("monthSelect");
 		if (dateRange.value == "all") {
 			app.month = "all";
