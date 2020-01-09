@@ -26,7 +26,21 @@ var app = new Vue({
     methods: {
         more: function() {
             this.pageSize += PAGE_SIZE;
-        }
+        },
+		truncate: function (html, length) {
+			length = (typeof length == 'undefined' ? 75 : length);/*default value is 75*/
+			var div = document.createElement("div");
+			div.innerHTML = html;
+			// add a space after each element in case we got adjacent elements, we don't want the text to run into each other
+			div.querySelectorAll("*").forEach(function (e) {
+				e.textContent += " ";
+			});
+			var retVal = div.textContent;
+			retVal.replace(/\s{2}/g, " ");// remove double whitespace
+			if (retVal.length > length) // truncate
+				retVal = retVal.substr(0, retVal.lastIndexOf(" ", length)) + "…";
+			return retVal;
+		}
     }
 });    
 
