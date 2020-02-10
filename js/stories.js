@@ -3,14 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	var stories = JSON.parse(document.getElementById("storiesJson").textContent);
 
 
-    var categories = [];
+    var creators = [];
     stories.forEach(function(s) {
         s.updated = new Date(s.updated); // fix date type
         
-        s.categories.forEach(function(c) { // get list of unique categories
-            if (categories.indexOf(c) == -1)
-                categories.push(c);
-        });
+				if (creators.indexOf(s.creator) == -1)
+						creators.push(s.creator);
         
         // create a thumbnail from the first picture we find in the content
         var e = document.createElement("div");
@@ -18,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
         s.img = e.querySelector("img").outerHTML;
     });
 
-    categories.sort();
-    categories.unshift("all");
-    var options = categories.map(function(c) {
+    creators.sort();
+    creators.unshift("all");
+    var options = creators.map(function(c) {
         var key = c.charAt(0).toUpperCase() + c.slice(1);
         key = key.replace(/-/g, " ");
         return {text: key, value: c}
