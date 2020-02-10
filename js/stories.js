@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", function() {
             length: stories.length,
             pageSize: 6,
             pageNum: 1,
-            category: "all",
+            creator: "all",
             options: options
         },
         computed: {
             items: function() { 
                 var filtered = [];
                 for (var i = 0; i < stories.length; ++i) {
-                    if (this.category == "all" || stories[i].categories.indexOf(this.category) > -1)
+                    if (this.creator == "all" || stories[i].creator == this.creator)
                         filtered.push(stories[i])
                 }
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             
             filter: function(event) {
-                this.category = document.getElementById("categorySelect").value;
+                this.creator = document.getElementById("categorySelect").value; // misnamed in document, should be creatorSelect
                 this.pageNum = 1;
             },
     		truncate: function (html, length) {
