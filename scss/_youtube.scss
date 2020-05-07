@@ -1,0 +1,58 @@
+.youtube-container {
+
+    &.full {
+        @include screen(tablet) {
+            padding: 2rem;
+            background-color: #f2f2f2;
+        }
+        margin: $default-margin 0;
+
+        .youtube-video {
+
+            .video {
+                position: relative;
+                display: block;
+                color: #fff;
+                width: 100%;
+                margin: 0 auto;
+                
+                @include screen(tablet) {                
+                    width: 65%;
+                }
+            }
+        }
+    }
+    .youtube-video {
+        .video {
+
+            &::after {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                content: '\f167';
+                font-family: "Font Awesome 5 Brands";
+                font-weight: 400;
+                font-size: 3.5em;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                text-shadow: 0 0 5px rgba(0,0,0,0.75);
+                text-decoration: none;
+            }
+            &:hover::after {
+                color: #fff;
+            }
+            @include print {
+                display: none !important;
+            }
+        }
+    }
+    a.hidden{
+    display:none;
+        @include print{
+            display:block;
+        }
+    }
+}
+

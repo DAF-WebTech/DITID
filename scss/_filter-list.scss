@@ -1,0 +1,241 @@
+p + .filter-list {
+    margin-top: 3rem;
+}
+
+.filter-list {
+   margin-bottom: 1.5em;
+   
+   .filter-bar {
+        margin-bottom: 1em;
+        
+        @include screen(tablet) {
+            display: flex;
+            align-items: flex-end;
+        }
+       
+       label {
+           font-weight: 600;
+           margin: 0.4em 0.75em 0.4em 0;
+       }
+       select {
+           margin-bottom: 0;
+           border-radius: 3px;
+           font-size: 0.85em;
+           margin-right: 1.25em;
+           padding: 0.5em;
+       
+           .option-year {
+               font-weight: bold;
+           }        
+        }
+   }
+   
+   .listing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 0 2em 0;
+        
+        @include screen(tablet) {
+            margin: 0 -0.75em 2em -0.75em;
+        }
+        
+        &.single-rows {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 2em 0;
+
+            .list-item {
+                width: 100%;
+                background-color: transparent;
+                border-top: 1px solid $module-border;
+                margin: 0;
+                
+                .list-image {
+                    display: none;
+                }
+                .list-content {
+                    padding: 1rem 0;
+                    
+                    .list-date {
+                        color: #888;
+                        margin: 0 0 0.5rem 0;
+                    }
+                    .list-heading a {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        margin-bottom: 0.25rem;
+                    }
+                    .list-description {
+                        margin-top: 0.25rem;
+                    }
+                    .read-more {
+                        text-transform: uppercase;
+                        font-size: 0.75rem;
+                        text-decoration: none;
+                        color: #888;
+                        display: inline-block;
+                        margin-top: 0.5rem;
+                    
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .dev-test-only {
+                    margin: 0.5rem 0;
+                }
+            }
+            .page_numbers {
+                padding-top: 1em;
+                border-top: 1px solid $module-border;
+            }
+        }
+   
+       .list-item {
+            display: flex;
+            flex-direction: column;
+            background-color: #f2f2f2;
+            width: 100%;
+           
+            @include screen(tablet) {
+                width: calc(50% - 1.5em);
+                margin: 0.75em;
+            }
+            @include screen(desktop) {
+                width: calc(33.33333333% - 1.5em);
+            }
+            margin: 0.75em 0;
+
+            .list-image {
+                background-color: #d2d2d2;
+                height: 200px;
+                
+                @include screen(tablet) {
+                    height: 175px;
+                }
+                @include screen(desktop) {
+                    height: 150px;
+                }
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    
+                    @include print {
+                        display: none;
+                    }
+                }
+                a {
+                    display: block;
+                    height: 100%;
+
+                    @include print {
+                        display: none;
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+               @include print {
+                    height: 0px;
+               }
+            }
+            .list-content {
+                padding: 1rem 1.5rem;
+                
+                .list-heading {
+                    font-size: 1.25em;
+                    line-height: 1.25;
+
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                        
+                        @include print {
+                            display: block;
+                            width:100%;
+                            word-break: break-all;
+                        }
+                    }
+                }
+                .list-date {
+                    margin-top: 0.75rem;
+                    font-size: 0.85em;
+                    color: #666;
+
+                    + .list-description {
+                        margin-top: 0.5rem;
+                    }
+                }
+
+                .list-description {
+                    margin-top: 0.75rem;
+                    font-size: 0.9em;
+                
+                    &:empty {
+                        display: none;
+                    }
+                }
+                
+                .list-category {
+                    background-color: #ddd;
+                    padding: 0.75rem;
+                    font-size: 0.9rem;
+                    word-break: break-word;
+                    margin-top: 1rem;
+                }
+                
+                @include print {
+                    display: block;
+                    width:100%;
+                }
+            }
+            .dev-test-only {
+                background-color: #f6f6f6;
+                padding: 1em;
+                margin: 0 1em 1em;
+                font-size: 0.9rem;
+            }
+            
+            @include print {
+                width: calc(32.33333333% - 1em);
+                margin: 0.5em;
+                display: inline-block;
+                page-break-inside: avoid;
+            }
+        }
+
+        button {
+            margin: 0.5em;
+        }
+
+        .item-none {
+            padding: 1.5em 0;
+        }
+    }
+    @include print {
+        display: block;
+        page-break-inside: avoid;
+    }
+}
+
+#storyList .list-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#latest-news-filtering {
+    #filter-button {
+        margin-top: 1rem;
+        @include screen(tablet) {
+            margin-top: 0;
+        }
+    }
+}

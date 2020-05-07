@@ -1,0 +1,37 @@
+.news-and-stories-container {
+    max-width: 1320px;
+    margin: 0 0 3rem 0;
+    
+    @include screen(desktop) {
+        margin: 0 auto 5rem auto;
+    }
+    
+    .news-and-stories {
+
+        @include screen(desktop) {
+            display: flex;
+            margin: 0 -1rem;
+            padding: 0;
+        }
+        
+        > div {
+            margin: 0 0 1.5rem 0;
+            
+            @include screen(desktop) {
+                width: calc(50% - 2rem);
+                margin: 0 1rem;
+            }
+            border: 1px solid #dfe1e5;
+            border-radius: 7px;
+            padding: 1.5rem 2rem;
+        }
+    }
+}
+
+.home .news-and-stories-container .news-and-stories > div {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+
+    @include screen(desktop) {
+        margin: 0 1.5rem;
+    }
+}

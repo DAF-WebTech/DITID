@@ -1,0 +1,176 @@
+body {
+    line-height: 1.5;
+}
+
+h1 {
+    margin: -0.7rem 0 0.75em 0;
+    font-size: 2.75rem;
+}
+h2 {
+    font-size: 2.1875rem;
+    margin: 0 0 0.5em 0;
+}
+h3 {
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 0 0.5em 0;
+    /* font-size: 1.5rem; */
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+}
+h4 {
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.button {
+    background-color: buttonface;
+    font-family: inherit;
+    font-size: inherit;
+    color: #111;
+    
+    &:hover {
+        color: #111;
+    }
+}
+
+blockquote {
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    width: 100%;
+    padding: 1.25em;
+    font-size: 1rem;
+    margin: 2.5em 0;
+    
+    h4 {
+        margin: 0;
+    }
+    
+    footer {
+        color: #777;
+    }
+    &::after {
+        display: none;
+    }
+}
+.pullquote {
+    color: #007eb1;
+}
+
+ul + p {
+    margin-top: 2rem;
+}
+ul.chevron {
+    margin-left: 1.5rem;
+    list-style-type: none;
+    
+    > li {
+        position: relative;
+        padding-left: 1rem;
+        
+        &::before {
+            position: absolute;
+            top: 0.25rem;
+            left: 0;
+                    
+            font-family: "Font Awesome 5 Pro";
+            content: "\f054";
+            font-weight: 400;
+            color: $module-arrow;
+            font-size: 0.85rem;
+        }    
+    }
+}
+
+
+hr {
+    border-top: 2px solid #ededed;
+    margin: $default-margin 0;
+
+    &.small {
+        margin: 1rem 0 2rem 0;
+    }
+}
+
+.main-content {
+    * + h2,
+    * + h3 {
+        margin-top: 2.5rem;
+    }
+    p + h4 {
+        margin-top: 1.5rem;
+    }
+
+    
+    ul {
+        ul {
+            list-style-type: none;
+            margin-bottom: 0;
+            padding: 0;
+            
+            li {
+                position: relative;
+                padding-left: 1rem;
+                
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: -1.5rem;
+                    content: "\2014";
+                }
+            }
+        }
+    }
+}
+
+.connect {
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+
+    li {
+        margin-right: 0.25em;
+    }
+}
+
+* + .case-study {
+    margin-top: $default-margin;
+}
+
+.case-study {
+    background-color: #f2f2f2;
+    padding: 2rem;
+    margin-bottom: $default-margin;
+
+    h4 {
+        font-weight: 600;
+    }
+    
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.intro-text {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #949494;
+    margin: 2rem 0;
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
+    
+}
+.fullwidth .intro-text {
+    margin: 2rem 0 $default-margin 0;
+
+    + p {
+        margin-top: -2rem;
+    }
+}

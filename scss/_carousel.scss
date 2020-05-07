@@ -1,0 +1,152 @@
+.image-carousel-container {
+    margin-bottom: 3em;
+    
+    @include print {
+        display:block;
+    }
+}
+.home .image-carousel-container {
+    width: 100%;
+
+    .tile {
+        height: 300px;
+
+        @include screen(tablet) {
+            height: 450px;
+        }
+
+        .carousel-caption {
+            background-color: #333;
+            padding: 2rem 3rem;
+            color: #fff;
+
+            @media only screen and (min-width: 1301px) {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 450px;
+                transform: translateX(-650px);
+                height: 100%;
+                right: auto;
+                bottom: auto;
+                padding: 0 5rem 1rem 5rem;
+                background-color: rgba(0,0,0,0.7);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            h3 {
+                font-size: 2rem;
+                line-height: 1.3;
+                @include screen(desktop) {
+                    margin-bottom: 2rem;
+                }
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 2;
+            }
+            
+             @include print {
+                 display:block;
+                 width:45%;
+                 left:10%;
+                 right:0;
+                 padding:2rem 6rem 2rem 10rem;
+             }
+        }
+        
+        img{
+             @include print {
+                 display: none !important;
+             }
+        }
+        @include print {
+            display:block;
+            height:10%;
+        }
+    }
+}
+
+
+.image-carousel {
+    .tile {
+        .carousel-caption {
+            background-color: #f2f2f2;
+            padding: 0.75rem 1.25rem 1rem 1.25rem;
+            color: inherit;
+
+            @include screen('tablet') {
+                background-color: #f2f2f2;
+            }
+            
+            h3 { 
+                margin: 0 0 0.25rem 0;
+            }
+
+            p {
+                color: inherit;       
+            }
+
+            @include print {
+                display:block;
+                width:100%;
+            }
+        }
+        a {
+            color: #222;
+        }
+        img,
+        .slick-slide img{
+             @include print {
+                    display: none !important;
+                }
+        }
+        @include print {
+            display:block;
+            height:0px;
+            width:100%;
+            page-break-inside: avoid;
+        }
+    }
+}
+
+.slick-dots {
+    margin-bottom: 2em;
+
+    li {
+        button::before {
+            background-color: #fff;
+            border: 1px solid #c8c8c8;
+            width: 10px;
+            height: 10px;
+        }
+
+        &.slick-active {
+            button::before {
+                background-color: #c8c8c8;
+                width: 10px;
+                height: 10px; 
+            }
+        }
+    }
+    @include print {
+        display: none;
+    }
+}
+
+.image-carousel .slick-prev, 
+.image-carousel .slick-next {
+    top: 30%;
+    
+    @include screen(desktop) {
+        top: 50%;
+    }
+    
+    @include print {
+        display: none;
+    }
+}
+

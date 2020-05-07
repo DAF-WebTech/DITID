@@ -1,0 +1,32 @@
+.scroll-to-top {
+    display: none;
+}
+
+@include screen(desktop) {
+    .scroll-to-top {
+        display: flex;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        opacity: 0.5;
+        transition: opacity 0.15s ease;
+        padding: 0.5rem;
+        
+        &:hover {
+            opacity: 1;
+        }
+    
+        a {
+            display: inline-flex;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            font-weight: bold;
+    
+            span {
+                font-size: 1.75em;
+                margin-left: 0.2em;
+            }
+        }
+    }
+}

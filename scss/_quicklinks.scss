@@ -1,0 +1,31 @@
+.quick-links-container {
+    background-color: #f2f2f2;
+    margin: $default-margin 0;
+
+    .quick-links-content {
+        padding: 2rem;
+
+        .quick-links {
+            @include screen(tablet) {
+                column-count: 2;
+            }
+            @include screen(desktop) {
+                column-count: 4;
+            }
+    
+            a {
+                display: block;
+                margin: 0 0 0.5rem 0;
+                color: #111;
+                text-decoration: none;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            a:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}

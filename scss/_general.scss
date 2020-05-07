@@ -1,0 +1,88 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    color: #222;
+    position: relative;
+    overflow-x: hidden;
+}
+
+a {
+    color: #007eb1;
+}
+a:hover {
+    color: #ff8100;
+}
+
+:focus {
+    outline-color: #007eb1;
+    outline-style: auto;
+    outline-width: 2px;
+}
+p,
+blockquote{
+    @include print {
+        page-break-inside: avoid;
+    }
+}
+.content {
+    padding: 0 1.25em 1.5em 1.25em;
+
+    @include screen(desktop) {
+        padding: 0 2em 1.5em 2em;
+    }
+    @include print {
+        padding: 5mm;  
+    }
+}
+.content .container {
+    flex-wrap: wrap;
+}
+.content.home {
+    display: block;
+    padding: 0;
+}
+
+
+.fullwidth .container {
+    max-width: 1100px;
+}
+
+.main-content {
+    max-width: 100%;
+}
+
+.main-content.wide-main {
+    width: 100%;
+    @include screen(desktop) {
+        width: 80%;
+    }
+
+    h2 {
+        margin-bottom: 0.25em;
+    }
+}
+.search-page .main-content.wide-main {
+    width: 100%;
+}
+
+.content.home {
+    .main-content {
+        width: 100%;
+        @include screen(desktop) {
+            width: 80%;
+        }
+        
+        padding-left: 0;
+    }
+}
+
+.content-image img {
+    margin-bottom: 2em;
+}
+
+.hide {
+    display: none;
+}

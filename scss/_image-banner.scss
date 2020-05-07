@@ -1,0 +1,25 @@
+.image-banner {
+    height:275px;
+}
+@include screen(tablet) {
+    .image-banner {
+        height: 375px;
+    }
+}
+@include screen(desktop) {
+    .image-banner {
+        height: 450px;
+    }
+}
+.image-banner {
+    .image-rights {
+        line-height: 2;
+        
+        .fa-camera {
+            display: none;
+        }
+    }
+    @include print {
+        display: none;
+    }
+}

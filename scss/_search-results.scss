@@ -1,0 +1,53 @@
+.search-page {
+    .btn-group,
+    .modal,
+    h2.sr-only {
+        display: none;
+    }
+    cite {
+        color: #666;
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    .site-select {
+        fieldset {
+            margin: 0;
+        }
+        background-color: #f6f6f6;
+        border: 1px solid #e6e6e6;        
+    }
+    .search-results {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        .result {
+            padding: 1.5rem 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        h4 {
+            margin-bottom: 0.5rem;
+        }
+    }
+    aside {
+        h2 {
+            font-size: 1.5rem;
+            padding: 1rem 0 0 1rem;
+        }
+        h3 {
+            margin-top: 1rem;
+            padding: 0;
+        }
+        ul {
+            padding: 0;
+        }    
+    }
+}

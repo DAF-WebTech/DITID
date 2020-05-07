@@ -1,0 +1,25 @@
+footer.footer {
+    background-color: #f2f2f2;
+    padding: 3em 1em;
+    font-size: 0.85em;
+
+    .footer-links {
+
+        li:not(:last-child) {
+            border-right: 1px solid #999;
+            @include print {
+                border-style: none;
+            }
+        }
+    }
+    
+    a,
+    a:active,
+    a:visited {
+        color: #000;
+    }
+    
+    @include print {
+        display: none;
+    }
+}

@@ -1,0 +1,23 @@
+.social-share {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+
+    li {
+        margin-left: 1em;
+    
+        a { 
+            color: #999;
+            
+            &:hover {
+                color: #666;
+            }
+        }
+    }
+    
+    @include print {
+        display: none;
+    }
+}

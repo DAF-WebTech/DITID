@@ -1,0 +1,59 @@
+.benefits-container {
+    background-color: #f2f2f2;
+    margin: $default-margin 0;
+    padding: 2rem;
+    
+    h2,
+    .container > p {
+        text-align: center;
+    }
+    
+    .benefits {
+        @include screen(tablet) {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            padding: 1.5rem 0;
+            text-align: center;
+
+            @include screen(tablet) {
+                width: 33.33333333%;
+            }
+
+            i {
+                font-size: 3rem;
+                margin-bottom: 0.25rem;
+                color: #666;
+            }
+            p { 
+                padding: 0 1.5rem;
+                margin: 0;
+            }
+            @include print {
+                display: inline-block;
+                width: 21%;
+            }
+        }
+    }
+}
+
+.fullwidth {
+    .benefits-container {
+        .benefits {
+            li {
+                @include screen(tablet) {
+                    padding: 2.5rem 0;
+                }
+            }
+            p {
+                padding: 0 3rem;
+            }
+        }
+    }
+}
+    

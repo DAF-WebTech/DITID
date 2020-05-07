@@ -1,0 +1,13 @@
+.two-column-container {
+    margin: $default-margin 0;
+    
+    .two-column-content {
+        @include screen(desktop) {
+            column-count: 2;
+        }
+    
+        blockquote {
+            margin: 1em 0;
+        }
+    }
+}

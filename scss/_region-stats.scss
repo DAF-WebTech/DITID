@@ -1,0 +1,62 @@
+.region-stats-container {
+    margin: 3rem 0;
+    padding: 0;
+    margin-bottom: 3rem;
+    background-color: #f2f2f2;
+    clear: both;
+
+    &.full {
+        @include screen(desktop) {
+            margin: $default-margin 0;
+        }
+    }
+
+    .region-stats {
+        padding: 1.5rem 0;
+        margin: 0;
+
+        @include screen(tablet) {
+            display: flex;
+            margin: 0 -1.5rem;
+            flex-wrap: wrap;
+            flex-grow: 1;
+        }
+        list-style-type: none;
+        text-align: center;
+
+        li {
+            margin: 1.5rem;
+            padding: 0 5rem;
+            
+            @include screen(tablet) {
+                width: calc(50% - 3rem);
+            }
+            
+            @include screen(desktop) {
+                width: calc(33.33333333% - 3rem);
+            }
+        
+            h3 {
+                font-size: 3.5rem;
+                font-weight: bold;
+                line-height: 1;
+                margin-bottom: 1rem;
+                
+                 @include print {
+                     font-size:2rem;
+                 }
+            }
+            p {
+                font-size: 1.35rem;
+                font-weight: 300;
+                line-height: 1.3;
+                margin: 0;
+            }
+            @include print {
+                display:inline-block;
+                width:32.33%;
+                page-break-inside: avoid;
+            }
+        }
+    }
+}

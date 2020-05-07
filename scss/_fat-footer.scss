@@ -1,0 +1,107 @@
+.fat-footer {
+    .footer-header {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAL0lEQVQYV2NMS0v7z4AE1NXVGRiRBUECN2/eRAjCBECawCqRBcCCvb29/0FakAEAqV4XcJRCqVUAAAAASUVORK5CYII=) repeat #666;
+        height: 65px;
+        
+        .qgov-logo {
+            height: 45px;
+            display: block;
+            margin: 0 0 0 1em;
+            @include screen(desktop) {
+                margin: 10px 0 0 0;
+            }
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+        }
+    }
+
+    background-color: #eaeaea;
+
+    a {
+        transition: all 0.15s ease;
+    }
+
+    .container {
+        display: block;
+        @include screen(desktop) {
+            display: flex;
+        }
+
+        > div {
+            width: 100%;
+            padding: 1.25em;
+        
+            &.about-text { 
+                padding: 1rem;
+                @include screen(desktop) {
+                    padding: 2em 1.25em;
+                }
+            }
+            
+            @include screen(desktop) {
+                &.about-text { width: 30%; }
+                &.portfolio { width: 40%; }
+                &.connect { width: 30%; }
+            }
+        }
+    }
+    
+    .about-text {
+        font-size: 0.8em;
+        
+        .white-ribbon {
+            width: 125px;
+        }
+    }
+    .portfolio {
+        .portfolio-sites {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+        
+            li {
+                height: 64px;
+                margin: 0 7px 7px 0;
+                align-items: center;            
+                display: flex;
+
+                img {
+                    display: block;
+                }
+            }
+            
+            li:nth-child(1) img { height: 32px; }
+            li:nth-child(2) img { height: 64px; }
+        }
+    }
+    .connect {
+        p { margin-bottom: 0; }
+        
+        .contact-number {
+            color: #111;
+            font-weight: bold;
+        }
+            
+        .social {
+            display: flex;
+        
+            li {
+                margin-right: 0.5em;
+    
+                a {
+                    font-size: 2em;
+                    opacity: 1;
+                    
+                    .fa-facebook-square { color: #3b5998; }
+                    .fa-twitter { color: #1da1f2; }
+                    .fa-youtube { color: #f00; }
+                    
+                    &:hover {
+                        opacity: 0.75;
+                    }
+                }
+            }
+        }
+    }
+}
