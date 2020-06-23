@@ -235,6 +235,10 @@
         width: 100%;
         padding: 0;
         color: #fff;
+		
+		+ .home-tiles {
+			margin-top: -1.5rem;
+		}
 
         > li {
             margin: 1.5rem;
@@ -245,7 +249,13 @@
             .tile-content {
                 padding: 3rem;
                 text-align: center;
-            
+				display: flex;
+				flex-direction: column;
+				@include screen(tablet) {
+					justify-content: space-between;
+					min-height: 312px;
+				}
+				
                 h3 {
                     font-size: 3rem;
                     font-weight: 300;
