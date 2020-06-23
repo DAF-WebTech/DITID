@@ -13,8 +13,8 @@
 	.container {
 		padding: 1.5em 4.75em;
 
-		p:not(:last-child) {
-			margin-bottom: 1rem;
+		p:last-child {
+			margin-bottom: 0;
 		}
 	}
 
