@@ -16,6 +16,11 @@
 		
 		a {
 			color: #666 !important;
+			transition: all 0.15s ease;			
+		
+			&:hover {
+				color: #000;
+			}
 		}
     }
 }
