@@ -50,7 +50,8 @@
           	&:hover circle,
           	&:hover .circle {
               	fill: #000;
-          	}
+				r: 5.5;
+          	}			
 		}
 		&.disabled {
           	cursor: default;
