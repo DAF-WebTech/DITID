@@ -53,7 +53,9 @@
           	}
 		}
 		&.disabled {
-          	circle,
+          	cursor: default;
+			
+			circle,
           	.circle,
           	&:hover circle,
           	&:hover .circle {
