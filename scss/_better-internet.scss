@@ -52,6 +52,9 @@
               	fill: #000;
           	}
 		}
+		&.disabled {
+			fill: #999;
+		}
 		.circle-fill {
 			fill: #fff;
 		}
