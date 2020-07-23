@@ -1,0 +1,71 @@
+.better-internet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    @include screen(tablet) {
+        flex-direction: row;
+
+        #fibreqld {
+            width: 60%;        
+        }
+        #description {
+            width: 40%;
+        }
+    }
+
+    #queensland path {
+        fill: #aaa;
+    }
+    #fibreline path {
+        fill: none;
+        /*stroke: #d9824b;*/
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke: #ccc;
+    }
+
+    .cityname {
+        display: none;
+        font-size: 9px;
+        fill: #231f20;
+        background-color: #fff;
+    
+        &.show {
+            display: block;
+        }
+    }
+
+    .citydot {
+        cursor: pointer;
+
+        circle,
+        .circle {
+            transition: all 0.15s ease;
+            fill: #ea7725;
+        }
+        &.active {
+          circle,
+          .circle,
+          &:hover circle,
+          &:hover .circle {
+              fill: #000;
+          }
+          .circle-fill {
+              fill: #fff;
+          }
+    }
+
+    .map-content {
+        display: none;
+        
+        &.active {
+            display: block;
+        }
+        img {
+            width: 100%;
+            display: block;
+            margin-bottom: 1rem;
+        }
+    }
+}
