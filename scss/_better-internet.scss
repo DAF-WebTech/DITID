@@ -31,9 +31,11 @@
         display: none;
         font-size: 9px;
         fill: #231f20;
-        background-color: #fff;
-    
-        &.show {
+		stroke: #fff;
+    	stroke-width: 2;
+    	paint-order: stroke;    
+        
+		&.show {
             display: block;
         }
     }
