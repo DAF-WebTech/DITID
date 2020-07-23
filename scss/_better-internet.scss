@@ -45,16 +45,17 @@
             fill: #ea7725;
         }
         &.active {
-          circle,
-          .circle,
-          &:hover circle,
-          &:hover .circle {
-              fill: #000;
-          }
-          .circle-fill {
-              fill: #fff;
-          }
-    }
+          	circle,
+          	.circle,
+          	&:hover circle,
+          	&:hover .circle {
+              	fill: #000;
+          	}
+          	.circle-fill {
+            	fill: #fff;
+          	}
+    	}
+	}
 
     .map-content {
         display: none;
