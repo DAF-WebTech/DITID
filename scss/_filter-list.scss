@@ -39,6 +39,12 @@ p + .filter-list {
         @include screen(tablet) {
             margin: 0 -0.75em 2em -0.75em;
         }
+	   
+	   &.story-module {
+	   		.list-item {
+				flex-grow: 1;
+		   }
+	   }
         
         &.single-rows {
             flex-direction: column;
