@@ -43,6 +43,9 @@ p + .filter-list {
 	   &.story-module {
 	   		.list-item {
 				flex-grow: 1;
+				@include screen(tablet) {
+					max-width: calc(50% - 1.5em);
+				}
 		   }
 	   }
         
