@@ -41,12 +41,12 @@
 		
 		&::before, &::after {
             width: 2px;
-            background-color: #999;
+            background-color: #333;
         }
 
         &:active::before,
         &:active::after {
-            background-color: #333;
+            background-color: #000;
         }
     }
 }
